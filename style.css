@@ -1,0 +1,537 @@
+/* Variáveis CSS (Tema Claro - Original) */
+:root {
+  --primary-color: #1a3c34;
+  --accent-color: #00a896;
+  --success-color: #28b485;
+  --danger-color: #d90429;
+  --background-color: #f0f4f8;
+  --card-background: #ffffff;
+  --text-color: #2d2d2d;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(135deg, #00a896, #028090);
+  --mensagem-bot-background: #e0e0e0;
+}
+
+/* Tema Escuro */
+.tema-escuro {
+  --background-color: #1e2a44;
+  --card-background: #2a3b5b;
+  --text-color: #e0e0e0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --mensagem-bot-background: #3a4a6b;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#alternar-tema {
+  position: absolute;
+  right: 0;
+  background: var(--gradient);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#alternar-tema:hover {
+  transform: scale(1.1);
+}
+
+#alternar-tema i {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Formulário */
+.form-section {
+  background: var(--card-background);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in;
+  transition: background 0.3s;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+  background: var(--card-background);
+  color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(0, 168, 150, 0.3);
+  outline: none;
+}
+
+.form-group input.invalido,
+.form-group select.invalido {
+  border-color: var(--danger-color);
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #028090, #00a896);
+}
+
+button i {
+  margin-right: 8px;
+}
+
+.erro {
+  color: var(--danger-color);
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Totais */
+.totais {
+  text-align: center;
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+
+.totais p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.totais h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.totais #saldo {
+  color: var(--success-color);
+}
+
+.totais #saldo.negativo {
+  color: var(--danger-color);
+}
+
+/* Resumo Mensal */
+.resumo-mensal {
+  background: var(--card-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+
+.resumo-mensal h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+#resumo-mensal-lista p {
+  margin: 5px 0;
+}
+
+/* Controles */
+.controles {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.controles .form-group {
+  margin-bottom: 0;
+  max-width: 200px;
+}
+
+#limpar-tudo-btn {
+  background: var(--danger-color);
+}
+
+#limpar-tudo-btn:hover {
+  background: #b70321;
+}
+
+/* Transações */
+.transacoes h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+#lista {
+  list-style: none;
+}
+
+#lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-background);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, background 0.3s;
+  animation: fadeInItem 0.3s ease;
+}
+
+#lista li:hover {
+  transform: translateY(-3px);
+}
+
+#lista li.ganho {
+  border-left: 5px solid var(--success-color);
+}
+
+#lista li.gasto {
+  border-left: 5px solid var(--danger-color);
+}
+
+#lista li button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background: var(--danger-color);
+}
+
+#lista li button:hover {
+  background: #b70321;
+}
+
+/* Chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#toggle-chatbot {
+  background: var(--gradient);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+#toggle-chatbot:hover {
+  transform: scale(1.1);
+}
+
+#toggle-chatbot i {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#chatbot-conversa {
+  background: var(--card-background);
+  width: 350px;
+  max-height: 500px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+  transition: background 0.3s;
+}
+
+.chatbot-header {
+  background: var(--gradient);
+  color: #fff;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+#fechar-chatbot {
+  background: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+#fechar-chatbot:hover {
+  color: #ddd;
+}
+
+#chatbot-mensagens {
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.chatbot-mensagem {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.chatbot-mensagem.usuario {
+  background: var(--accent-color);
+  color: #fff;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chatbot-mensagem.bot {
+  background: var(--mensagem-bot-background);
+  color: var(--text-color);
+  margin-right: auto;
+  transition: background 0.3s, color 0.3s;
+}
+
+.chatbot-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.opcao-chatbot {
+  background: var(--accent-color);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  flex: 1;
+  text-align: center;
+}
+
+.opcao-chatbot:hover {
+  background: #028090;
+}
+
+.chatbot-input-area {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+}
+
+#chatbot-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  font-size: 0.9rem;
+  background: var(--card-background);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+#chatbot-enviar {
+  background: var(--accent-color);
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+#chatbot-enviar:hover {
+  background: #028090;
+}
+
+#chatbot-enviar i {
+  margin: 0;
+}
+
+/* Notificação */
+.notificacao {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--success-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInItem {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .controles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controles .form-group {
+    width: 100%;
+  }
+
+  #lista li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #lista li button {
+    margin-top: 10px;
+  }
+
+  #chatbot-conversa {
+    width: 90vw;
+    max-width: none;
+    bottom: 80px;
+    right: 5vw;
+  }
+
+  .chatbot-opcoes {
+    flex-direction: column;
+  }
+
+  .opcao-chatbot {
+    width: 100%;
+  }
+
+  .notificacao {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Meta de Poupança */
+.progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  border-radius: 5px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--success-color);
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+/* Rodapé */
+.rodape,
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: var(--text);
+}

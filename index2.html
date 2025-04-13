@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle de Finanças</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="tema-claro">
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-wallet"></i> Controle de Finanças</h1>
+      <button id="alternar-tema" title="Alternar Tema"><i class="fas fa-moon"></i></button>
+    </header>
+
+    <!-- Formulário -->
+    <section class="form-section">
+      <form id="transacao-form">
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" placeholder="Ex: Salário" required />
+        
+<!-- Meta de Poupança -->
+<section class="resumo-mensal">
+  <h3>Meta de Poupança</h3>
+  <div id="meta-progresso-container">
+    <p>Meta sugerida: <span id="meta-valor">R$ 0.00</span></p>
+    <div class="progress-bar">
+      <div id="barra-progresso" class="progress"></div>
+    </div>
+    <p>Poupado: <span id="poupado">R$ 0.00</span></p>
+  </div>
+</section>
+
+</div>
+        <div class="form-group">
+          <label for="valor">Valor (R$)</label>
+          <input type="number" id="valor" placeholder="0.00" step="0.01" min="0" required />
+        </div>
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select id="tipo" required>
+            <option value="ganho">Ganho</option>
+            <option value="gasto">Gasto</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option value="salario">Salário</option>
+            <option value="alimentacao">Alimentação</option>
+            <option value="transporte">Transporte</option>
+            <option value="lazer">Lazer</option>
+            <option value="moradia">Moradia</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+        <button type="submit"><i class="fas fa-plus"></i> Adicionar</button>
+      </form>
+      <p id="erro-mensagem" class="erro"></p>
+    </section>
+
+    <!-- Totais -->
+    <section class="totais">
+      <p>Ganhos: R$ <span id="ganhos">0.00</span></p>
+      <p>Gastos: R$ <span id="gastos">0.00</span></p>
+      <h2>Saldo: R$ <span id="saldo">0.00</span></h2>
+    </section>
+
+    <!-- Resumo Mensal -->
+    <section class="resumo-mensal">
+      <h3>Resumo Mensal</h3>
+      <div id="resumo-mensal-lista"></div>
+    </section>
+
+    <!-- Controles -->
+    <section class="controles">
+      <div class="form-group">
+        <label for="busca">Buscar</label>
+        <input type="text" id="busca" placeholder="Digite descrição ou categoria..." />
+      </div>
+      <div class="form-group">
+        <label for="filtro-tipo">Filtrar por Tipo</label>
+        <select id="filtro-tipo">
+          <option value="todos">Todos</option>
+          <option value="ganho">Ganhos</option>
+          <option value="gasto">Gastos</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ordenar">Ordenar por</label>
+        <select id="ordenar">
+          <option value="data-desc">Data (Mais Recente)</option>
+          <option value="data-asc">Data (Mais Antiga)</option>
+          <option value="valor-desc">Valor (Maior)</option>
+          <option value="valor-asc">Valor (Menor)</option>
+        </select>
+      </div>
+      <button id="importar-btn"><i class="fas fa-upload"></i> Importar</button>
+      <button id="exportar-btn"><i class="fas fa-download"></i> Exportar</button>
+      <button id="limpar-tudo-btn"><i class="fas fa-trash-alt"></i> Limpar Tudo</button>
+      <input type="file" id="importar-arquivo" style="display: none;" accept=".json" />
+    </section>
+
+    <!-- Transações -->
+    <section class="transacoes">
+      <h3>Transações</h3>
+      <ul id="lista"></ul>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+      <button id="toggle-chatbot" title="Abrir Chatbot"><i class="fas fa-robot"></i></button>
+      <div id="chatbot-conversa">
+        <div class="chatbot-header">
+          <h4>Assistente Financeiro</h4>
+          <button id="fechar-chatbot"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chatbot-mensagens"></div>
+        <div class="chatbot-opcoes">
+          <button class="opcao-chatbot" data-mensagem="Analise meus gastos">Analisar Gastos</button>
+          <button class="opcao-chatbot" data-mensagem="Dê uma dica financeira">Dica Financeira</button>
+          <button class="opcao-chatbot" data-mensagem="Como está meu saldo?">Ver Saldo</button>
+          <button class="opcao-chatbot" data-mensagem="Sugira uma meta">Sugerir Meta</button>
+          <button class="opcao-chatbot" data-mensagem="Ajuda">Ajuda</button>
+        </div>
+        <div class="chatbot-input-area">
+          <input type="text" id="chatbot-input" placeholder="Digite sua pergunta..." />
+          <button id="chatbot-enviar"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notificação -->
+    <div id="notificacao" class="notificacao"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Rodapé -->
+  <footer class="rodape">
+    <p>Criado por <strong>Erick Carmo</strong> 💻</p>
+  </footer>
